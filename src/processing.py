@@ -8,6 +8,12 @@ def filter_by_state(list_dict: list[dict[str, str | int]], filter_key: str = "EX
     return filter_by_state_list
 
 
+def sort_by_date(list_dict_sort: list[dict[str, str | int]], descending: bool = True) -> list[dict[str, str | int]]:
+    """ Функция должна возвращать новый список, отсортированный по дате. """
+    list_dict_sort.sort(key=lambda dict_date: dict_date["date"], reverse=descending)
+    return list_dict_sort
+
+
 if __name__ == "__main__":
     lst = [
         {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
