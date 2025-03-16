@@ -17,7 +17,7 @@ def get_mask_card_number(card_number: int | str) -> str:
 def get_mask_account(account_number: int | str) -> str:
     """Функция, которая принимает на вход номер счета и возвращает его маску."""
     if not type(account_number) is int and not type(account_number) is str:
-        return "Введен некорректный номер карты"
+        return "Введен некорректный номер счета"
     account_number_str = str(account_number)
     if len(account_number_str) == 20 and account_number_str.isdigit():
         return f"**{account_number_str[-4:]}"
