@@ -14,3 +14,7 @@ git clone https://github.com/AnMan90/Homework.git
 ```
 poetry install
 ```
+
+## Тестирование
+
+Код проекта протестирован с помощью "Pytest". Отчет о покрытии кода содержится в директории htmlcov.
