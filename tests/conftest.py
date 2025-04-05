@@ -65,3 +65,8 @@ def pending_transactions():
             "to": "Счет 14211924144426031657",
         },
     ]
+
+
+@pytest.fixture
+def name_json_file():
+    return "outpost.json"
