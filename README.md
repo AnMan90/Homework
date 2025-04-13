@@ -100,6 +100,10 @@ my_function(1, 2)
 Для конвертации валюты воспользуйтесь Exchange Rates Data API: 
 ### https://apilayer.com/exchangerates_data-api.
 
+## Модуль read_transactions
+### Реализованы функции read_fin_trans_csv и read_fin_trans_excel
+которые на вход принимают путь до соответствующего файла(csv, excel) с транзакциями
+и возвращают их в виде списков словарей. 
 
 ## .env.sample
 ### Шаблон .env-файла 
