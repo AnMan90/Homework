@@ -21,6 +21,7 @@ def read_fin_trans_excel(path_excel) -> list[dict]:
     и возврата данных в виде списка словарей"""
     try:
         transactions_list = pd.read_excel(path_excel)
+        transactions_list = transactions_list.fillna("")
         list_of_dicts = transactions_list.to_dict("records")
         return list(list_of_dicts)
     except FileNotFoundError:
