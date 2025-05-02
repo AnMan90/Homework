@@ -7,12 +7,12 @@ def mask_account_card(account_card: str) -> str:
         return "Пожалуйста, введите данные"
     elif account_card[:4] == "Счет":
         if account_card[5:].isdigit():
-            return f"{account_card[:4]} {get_mask_account(int(account_card[5:]))}"
+            return f"{account_card[:4]} {get_mask_account(account_card[5:])}"
         else:
             return "Введен некорректный номер счета"
     else:
         if account_card[-16:].isdigit():
-            return f"{account_card[:-17]} {get_mask_card_number(int(account_card[-16:]))}"
+            return f"{account_card[:-17]} {get_mask_card_number(account_card[-16:])}"
         else:
             return "Введен некорректный номер карты"
 

@@ -3,18 +3,20 @@ import pytest
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
 
-def test_filter_by_currency(pending_transactions):
-    fil_by_cur = filter_by_currency(pending_transactions, "USD")
+def test_filter_by_currency(pending_transactions_new):
+    fil_by_cur = filter_by_currency(pending_transactions_new, "PEN")
     assert next(fil_by_cur) == {
-        "id": 939719570,
+        "id": "650703",
         "state": "EXECUTED",
-        "date": "2018-06-30T02:08:58.425572",
-        "operationAmount": {"amount": "9824.07", "currency": {"name": "USD", "code": "USD"}},
+        "date": "2023-09-05T11:30:32Z",
+        "amount": "16210",
+        "currency_name": "Sol",
+        "currency_code": "PEN",
+        "from": "Счет 58803664561298323391",
+        "to": "Счет 39745660563456619397",
         "description": "Перевод организации",
-        "from": "Счет 75106830613657916952",
-        "to": "Счет 11776614605963066702",
     }
-    fil_by_cur = filter_by_currency(pending_transactions, "EUR")
+    fil_by_cur = filter_by_currency(pending_transactions_new, "EUR")
     with pytest.raises(StopIteration):
         next(fil_by_cur)
     fil_by_cur = filter_by_currency([], "USD")
